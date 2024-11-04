@@ -377,5 +377,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("7_8cblx")
 text = "Join game"
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer_player.tscn")
+spawn_path = NodePath("../Players")
+spawn_limit = 2
+
+[node name="Players" type="Node" parent="."]
+
 [connection signal="pressed" from="Labels/MultiplayerHud/Panel/VBoxContainer/Host" to="GameManager" method="_on_hosting"]
 [connection signal="pressed" from="Labels/MultiplayerHud/Panel/VBoxContainer/Join" to="GameManager" method="_on_joining"]
