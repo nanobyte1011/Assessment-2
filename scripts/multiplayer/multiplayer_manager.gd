@@ -6,10 +6,12 @@ const SERVERPORT = 25565
 const SERVERIP = "127.0.0.1"
 var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
 var player_spawn_node
+var host_mode_enabled = false
 
 # Called when the node enters the scene tree for the first time.
 func become_host() -> void:
 	player_spawn_node = get_tree().get_current_scene().get_node("Players")
+	host_mode_enabled = true
 	
 	var server_peer = ENetMultiplayerPeer.new()
 	server_peer.create_server(SERVERPORT)

@@ -19,9 +19,11 @@ var alive = true
 		%InputSynchronizer.set_multiplayer_authority(id)
 
 func _ready():
-	if multiplayer.get_unique_id() == player_id:
+	if multiplayer.get_uniid() == player_id:
+	
 		$Camera2D.make_current()
 	else:
+		
 		$Camera2D.enabled = false
 
 func _apply_animations(delta):
